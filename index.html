@@ -10,6 +10,7 @@
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <!-- Place favicon.ico in the root directory -->
 
+        <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
@@ -20,16 +21,40 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
+        <div class="content">
         <h1 id="title">Welcome!</h1>
         <h3>What would you like to do?</h3>
-        <div class="item"><p>Create a form!</p></div>
-        <div class="item"><p>Access resources!</p></div>
-        <div class="item"><p>Research!</p></div>
-
+        <div class="item" id="1"><p>Create a form!</p>
+        <p style="display: none;">Invisible</p><p style="display: none;">lol</p></div>
+        <div class="item" id="2"><p>Access resources!</p>
+        <p style="display: none;">Invisible</p></div>
+        <div class="item" id="3"><p>Research!</p>
+        <p style="display: none;">Invisible</p><h2 style="display: none;">hi</h2></div>
+        </div>
+        <!--
         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
+        -->
+        <script src="js/vendor/jquery-3.1.1.min.js"></script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
+        <script type="text/javascript">
+            window.onload = function() {
+                if (window.jQuery) {  
+                    // jQuery is loaded
+                    alert("Yeah!");
+                } else {
+                    // jQuery is not loaded
+                    alert("Doesn't Work");
+                }
+            }
+            $(document).ready(function(){
+                $(".item").mouseenter(function(){
+                    $("this").css("background-color", "grey");
+                    $(this).css("color", "white");
+                });
+            });
+        </script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
